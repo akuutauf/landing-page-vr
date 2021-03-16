@@ -1,0 +1,101 @@
+// Font
+@import url("https://fonts.googleapis.com/css2?family=Allerta&display=swap");
+
+// Variables
+$primaryColor: #7700ec;
+$secondaryColor: #aeaeae;
+$textColor: #c565ff;
+
+// Mixin
+@mixin tombol {
+  transition: 0.3s color ease;
+  background-color: $primaryColor;
+  color: white;
+  border-radius: 2em;
+  border: 1px solid transparent;
+  padding-left: 1.5em;
+  padding-right: 1.5em;
+
+  &:hover {
+    background-color: transparent;
+    color: $primaryColor;
+    border-radius: 2em;
+    border: 1px solid $primaryColor;
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+  }
+}
+
+// Style
+body {
+  font-family: "Allerta", sans-serif;
+  background-image: url(../img/background.svg);
+  background-position: top right;
+  background-repeat: no-repeat;
+  background-size: 65vmax;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+// Navigation
+.custom-nav {
+  .navbar-brand {
+    img {
+      width: 30px;
+      height: 30px;
+    }
+    span {
+      color: $primaryColor;
+      font-weight: 500;
+      font-size: 1rem;
+      margin-left: 0.5em;
+    }
+  }
+  #navbarNav {
+    ul {
+      li {
+        a {
+          color: $primaryColor;
+          font-weight: 500;
+          text-transform: uppercase;
+          margin-left: 2.2em;
+          transition: 0.5 color ease;
+
+          &:hover {
+            color: darken($primaryColor, $amount: 30%);
+          }
+        }
+        .sign-up-button {
+          @include tombol;
+        }
+      }
+    }
+  }
+}
+
+.my-content {
+  margin-top: 8em;
+  .custom-row {
+    .custom-col {
+      h2 {
+        color: $primaryColor;
+        font-weight: 700;
+      }
+      p {
+        color: $textColor;
+      }
+      a {
+        font-weight: 400;
+        @include tombol;
+      }
+    }
+  }
+  @media screen and(max-width: 767px) {
+    margin-top: 2em;
+  }
+
+  //   @media screen and(max-width: 494px) {}
+}
